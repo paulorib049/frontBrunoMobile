@@ -4,7 +4,7 @@ import * as Animatable from 'react-native-animatable';
 import { useNavigation } from '@react-navigation/native';
 
 export default function WelcomeScreen() {
-  const navigation = useNavigation(); // Adicione os parênteses para invocar a função
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -17,7 +17,7 @@ export default function WelcomeScreen() {
         />
       </View>
       <Animatable.View
-        delay={600}
+        deLay={600}
         animation="fadeInUp"
         style={styles.containerForm}
       >
