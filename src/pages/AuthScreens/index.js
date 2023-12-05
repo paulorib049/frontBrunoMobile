@@ -13,7 +13,7 @@ export default function AuthScreens() {
   const navigation = useNavigation();
 
   const goToProductScreen = () => {
-    navigation.navigate('ProductScreen'); // Altere 'ProductScreen' para o nome da sua tela de produtos
+    navigation.navigate('ProductScreen');
   };
 
   return (
