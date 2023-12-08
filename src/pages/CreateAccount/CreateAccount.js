@@ -9,15 +9,12 @@ import {
 import * as Animatable from 'react-native-animatable';
 import { useNavigation } from '@react-navigation/native';
 
-export default function AuthScreens() {
+export default function CreateAccount() {
   const navigation = useNavigation();
 
-  const goToProductScreen = () => {
-    navigation.navigate('ProductScreen');
+  const goToAuthScreens = () => {
+    navigation.navigate('AuthScreens');
   };
-  const goToCreateAccount = () => {
-    navigation.navigate('CreateAccount')
-  }
 
   return (
     <View style={styles.container}>
@@ -26,22 +23,24 @@ export default function AuthScreens() {
         delay={500}
         style={styles.containerHeader}
       >
-        <Text style={styles.headerText}>Bem-Vindo(a)</Text>
+        <Text style={styles.headerText}>Crie sua Conta</Text>
       </Animatable.View>
       <Animatable.View animation="fadeInUp" style={styles.containerForm}>
-        <Text style={styles.title}>Email</Text>
+        <Text style={styles.title}>Nome Completo</Text>
         <TextInput
-          placeholder="Digite seu email..."
+          placeholder="Digite seu nome completo..."
           style={styles.input}
-        ></TextInput>
-        <TextInput placeholder="Sua senha" style={styles.input}></TextInput>
-        <TouchableOpacity style={styles.button} onPress={goToProductScreen}>
-          <Text style={styles.buttonText}>Acessar</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonRegister} onPress={goToCreateAccount}>
-          <Text style={styles.registerText}>
-            Não possui uma conta? Cadastre-se
-          </Text>
+        />
+        <Text style={styles.title}>Email</Text>
+        <TextInput placeholder="Digite seu email..." style={styles.input} />
+        <Text style={styles.title}>Senha</Text>
+        <TextInput
+          placeholder="Digite sua senha"
+          style={styles.input}
+          secureTextEntry={true}
+        />
+        <TouchableOpacity style={styles.button} onPress={goToAuthScreens}>
+          <Text style={styles.buttonText}>Cadastrar</Text>
         </TouchableOpacity>
       </Animatable.View>
     </View>
@@ -93,13 +92,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#72AB86',
     fontWeight: 'bold',
-  },
-  buttonRegister: {
-    marginTop: 10,
-    alignSelf: 'center',
-  },
-  registerText: {
-    color: '#F4EEE7',
-    textAlign: 'center',
   },
 });
