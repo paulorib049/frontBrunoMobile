@@ -10,7 +10,7 @@ import {
 import carrinhoIcon from '../../../assets/carrinhoicon.png';
 import chatIcon from '../../../assets/chaticon.png';
 
-const ProductScreen = () => {
+const ProductScreen = ({ navigation }) => {
   const products = [
     {
       id: 1,
@@ -26,14 +26,20 @@ const ProductScreen = () => {
       price: 'R$ 130,00',
       image: require('../../../assets/camisa.png'),
     },
+    // Adicione mais produtos conforme necessário
   ];
 
   const handleAddToCart = (productId) => {
     console.log(`Produto ${productId} adicionado à cesta!`);
   };
 
-  const handleOpenChat = () => {
-    console.log('Abrir chat');
+
+  const goToChatPage = () => {
+    navigation.navigate('Chat');
+  };
+
+  const goToCartPage = () => {
+    navigation.navigate('Cart');
   };
 
   const renderProductItem = ({ item }) => (
@@ -56,10 +62,10 @@ const ProductScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.navBar}>
-        <TouchableOpacity style={styles.navBarButton} onPress={handleOpenChat}>
+        <TouchableOpacity style={styles.navBarButton} onPress={goToChatPage}>
           <Image source={chatIcon} style={styles.icon} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navBarButton} onPress={() => {}}>
+        <TouchableOpacity style={styles.navBarButton} onPress={goToCartPage}>
           <Image source={carrinhoIcon} style={styles.icon} />
         </TouchableOpacity>
       </View>

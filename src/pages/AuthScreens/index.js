@@ -15,6 +15,9 @@ export default function AuthScreens() {
   const goToProductScreen = () => {
     navigation.navigate('ProductScreen');
   };
+  const goToCreateAccount = () => {
+    navigation.navigate('CreateAccount')
+  }
 
   return (
     <View style={styles.container}>
@@ -35,7 +38,7 @@ export default function AuthScreens() {
         <TouchableOpacity style={styles.button} onPress={goToProductScreen}>
           <Text style={styles.buttonText}>Acessar</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonRegister}>
+        <TouchableOpacity style={styles.buttonRegister} onPress={goToCreateAccount}>
           <Text style={styles.registerText}>
             Não possui uma conta? Cadastre-se
           </Text>
