@@ -8,6 +8,8 @@ import ProductScreen from '../pages/ProductScreens/ProductScreen';
 import Cart from '../pages/Cart/Cart';
 import Chat from '../pages/Chat/Chat';
 import CreateAccount from '../pages/CreateAccount/CreateAccount';
+import User from '../pages/UserScreen/UserScreen';
+import Favorites from '../pages/Favorites/Favorites';
 
 const Stack = createNativeStackNavigator();
 
@@ -44,6 +46,17 @@ export default function Routes() {
         component={CreateAccount}
         options={{ headerShown: false }}
       />
+            <Stack.Screen
+        name="User"
+        component={User}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Favorites"
+        component={Favorites}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
+    
   );
 }
